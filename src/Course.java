@@ -1,11 +1,16 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Course {
     private String name;
     private String code;
-    private String teacher;
+    private Instructor teacher;
     private int capacity;
     private String situation;
+
+    public Course() {
+        this.students = new ArrayList<>(); // Öğrenci listesini başlattım
+    }
 
     private List<Student> students;
 
@@ -33,11 +38,11 @@ public class Course {
         this.code = code;
     }
 
-    public String getTeacher() {
+    public Instructor getTeacher() {
         return teacher;
     }
 
-    public void setTeacher(String teacher) {
+    public void setTeacher(Instructor teacher) {
         this.teacher = teacher;
     }
 
@@ -56,4 +61,7 @@ public class Course {
     public void setSituation(String situation) {
         this.situation = situation;
     }
+
+
 }
+

@@ -12,8 +12,11 @@ public class CourseManager {
         this.studentManager = studentManager;
         this.instructorManager = instructorManager;
     }
+    Course course = new Course();
 
     List<Course> courses = new ArrayList<>();
+
+
 
     public void addCourse(Course course) {
         courses.add(course);
@@ -21,36 +24,27 @@ public class CourseManager {
     }
     //List<Student> studentList = new ArrayList<>();
     public void joinCourse(String id, String code) {
-
         for (Course c : courses) {
-            for (Student st : studentManager.students) {
-                if ((st.getId().equals(id)) && (c.getCode().equals(code))) {
-                    List<Student> studentList = course.getStudents();
-                    if (c.getCapacity() > 0) {
-                        course.setStudents(studentList);
-                        course.getStudents().add(st);
+            if (c.getCode().equals(code) && c.getCapacity() > 0) {
+                for (Student st : studentManager.students) {
+                    if (st.getId().equals(id)) {
+                        c.getStudents().add(st);
                         c.setCapacity(c.getCapacity() - 1);
-                        System.out.println("joined successfully quota is " + c.getCapacity());
-                        System.out.println("students: "+ course.getStudents());
-
-                    } else {
-                        System.out.println("quota is full");
+                        System.out.println("joined successfully, quota is " + c.getCapacity());
+                        System.out.println("students: " + c.getStudents());
+                        return;
                     }
-
                 }
             }
-
         }
-
+        System.out.println("Course or student not found, or quota is full");
     }
-
-    Course course = new Course();
 
     public void addInstructor(String id, String classCode) {
         for (Instructor i : instructorManager.instructors) {
             for (Course c2 : courses) {
                 if ((c2.getCode().equals(classCode)) && (i.getId().equals(id))) {
-                    course.setTeacher(i.getFullName());
+                    course.setTeacher(i);
                     System.out.println("Instructor added completed: ");
                 }
             }

@@ -68,14 +68,14 @@ public class Main {
 
 
         course1.setName("Topoloji");
-        course1.setCode("MAT216");
+        course1.setCode("MATH216");
         course1.setCapacity(80);
         course1.setSituation("compulsory");
 
 
         Course course2 = new Course();
         course2.setName("Linear Algebra");
-        course2.setCode("MAT320");
+        course2.setCode("MATH320");
         course2.setCapacity(80);
         course2.setSituation("compulsory");
 
@@ -84,13 +84,16 @@ public class Main {
 
 
 
-        courseManager.joinCourse("544376654","MAT216");
-        courseManager.joinCourse("544376659","MAT216");
-        courseManager.joinCourse("544376659","MAT320");
-        courseManager.joinCourse("544376456","MAT320");
+        courseManager.joinCourse("544376654","MATH216");
+        courseManager.joinCourse("544376659","MATH216");
+        courseManager.joinCourse("544376659","MATH320");
+        courseManager.joinCourse("544376456","MATH320");
         studentManager.studentSearch("544376654");
 
         instructorManager.instructorSearch("1234567890");
-        courseManager.addInstructor("1234567890","MAT216");
+        courseManager.addInstructor("1234567890","MATH216");
+
+
+
     }
 }
