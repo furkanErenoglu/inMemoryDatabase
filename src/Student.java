@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Student {
     private String id;
     private String fullName;
@@ -6,6 +8,15 @@ public class Student {
     private String department;
     private String password;
     private String lesson;
+    private List<Course> courses;
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
 
     public String getLesson() {
         return lesson;

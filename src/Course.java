@@ -7,12 +7,12 @@ public class Course {
     private Instructor teacher;
     private int capacity;
     private String situation;
+    private List<Student> students;
 
     public Course() {
         this.students = new ArrayList<>(); // Öğrenci listesini başlattım
     }
 
-    private List<Student> students;
 
     public List<Student> getStudents() {
         return students;

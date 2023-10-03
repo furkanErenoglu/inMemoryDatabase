@@ -3,8 +3,11 @@ import java.util.List;
 
 public class StudentManager {
 
-    List<Student> students = new ArrayList<>();
+    private List<Student> students = new ArrayList<>();
 
+    public List<Student> getStudents() {
+        return students;
+    }
 
     public void addStudent(Student student) {
         students.add(student);
@@ -12,7 +15,7 @@ public class StudentManager {
     }
 
 
-    public void studentSearch(String id) {
+    public void getStudentById(String id) {
         for(Student s:students){
             if (s.getId().equals(id)){
                 System.out.println("Student: "+s.getFullName());

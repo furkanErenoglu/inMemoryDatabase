@@ -56,7 +56,7 @@ public class Main {
         studentManager.addStudent(student3);
         studentManager.addStudent(student4);
         studentManager.addStudent(student5);
-        System.out.println(studentManager.students.get(0).getFullName());
+        System.out.println(studentManager.getStudents().get(0).getFullName());
 
         Instructor instructor1 = new Instructor();
         instructor1.setFullName("Nilüfer Özdemir");
@@ -84,14 +84,14 @@ public class Main {
 
 
 
-        courseManager.joinCourse("544376654","MATH216");
-        courseManager.joinCourse("544376659","MATH216");
-        courseManager.joinCourse("544376659","MATH320");
-        courseManager.joinCourse("544376456","MATH320");
-        studentManager.studentSearch("544376654");
+        courseManager.joinCourse(student1,"MATH216");
+        courseManager.joinCourse(student2,"MATH216");
+        courseManager.joinCourse(student3,"MATH320");
+        courseManager.joinCourse(student4,"MATH320");
+        studentManager.getStudentById("544376654");
 
-        instructorManager.instructorSearch("1234567890");
-        courseManager.addInstructor("1234567890","MATH216");
+        instructorManager.getInsturctorById("1234567890");
+        courseManager.addInstructor(instructor1,"MATH216");
 
 
 
