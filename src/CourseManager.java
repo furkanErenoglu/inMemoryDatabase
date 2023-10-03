@@ -39,16 +39,14 @@ public class CourseManager {
     }
 
     public void addInstructor(Instructor instructor, String classCode) {
-        for (Instructor i : instructorManager.getInstructors()) {
             for (Course c2 : courses) {
-                if ((c2.getCode().equals(classCode)) && (i.getId().equals(instructor.getId()))) {
-                    c2.setTeacher(i);
+                if ((c2.getCode().equals(classCode)) && (instructor.getId().equals(instructor.getId()))) {
+                    c2.setTeacher(instructor);
                     System.out.println("Instructor added completed: ");
                 }
             }
 
 
-        }
     }
 
 }
